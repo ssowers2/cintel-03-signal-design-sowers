@@ -1,7 +1,7 @@
 """signal_design.py - Project script (example).
 
-Author: Your Name Here
-Date: 2026-mm-dd
+Author: Sabriya Sowers
+Date: 2026-11-02
 
 System Metrics Data
 
