@@ -1,7 +1,7 @@
 """signal_design.py - Project script (example).
 
 Author: Sabriya Sowers
-Date: 2026-11-02
+Date: 11-2-2026
 
 System Metrics Data
 
