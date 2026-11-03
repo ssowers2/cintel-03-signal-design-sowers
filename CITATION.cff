@@ -16,13 +16,13 @@ title: cintel-03-signal-design
 date-released: "2026-03-06"
 
 authors:
-  - family-names: Case
-    given-names: Denise M.
+  - family-names: Case, Sowers
+    given-names: Denise M., Sabriya F.
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, USA"
 
-repository-code: "https://github.com/denisecase/cintel-03-signal-design"
-url: "https://github.com/denisecase/cintel-03-signal-design"
+repository-code: "https://github.com/ssowers2/cintel-03-signal-design-sowers"
+url: "https://github.com/ssowers2/cintel-03-signal-design-sowers"
 license: MIT
 
 abstract: |
@@ -30,17 +30,12 @@ abstract: |
   Demonstrates professional Python project structure and workflows.
 
 keywords:
-  - data analytics
-  - continuous intelligence
+  - data governance
+  - metadata management
+  - data stewardship
+  - data quality
   - signal design
-  - professional workflows
-  - reproducible workflows
-  - software quality
-  - git
-  - github
-  - prek
   - python
-  - ruff
-  - ty
-  - uv
-  - zensical
+  - polars
+  - continuous intelligence
+  - healthcare analytics

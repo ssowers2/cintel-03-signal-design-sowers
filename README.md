@@ -1,33 +1,37 @@
-# cintel-03-signal-design
+
+# cintel-03-signal-design-sowers
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/cintel-03-signal-design/)
+[![CI](https://github.com/ssowers2/cintel-03-signal-design-sowers/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/ssowers2/cintel-03-signal-design-sowers/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://ssowers2.github.io/cintel-03-signal-design-sowers/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-> Transform raw system measurements into meaningful monitoring signals.
+> Transform raw data into meaningful monitoring signals to support data governance and informed decision-making.
 
 ## Project Overview
 
-Author: Denise Case
+**Author:** Sabriya Sowers
+**Date:** 2026 November
 
-Date: 2026 October
+This project explores signal design for continuous intelligence using Python and Polars.
 
-This project introduces signal design for continuous intelligence.
+The goal is to transform raw measurements into meaningful indicators that help identify patterns, monitor performance, and support decision-making.
 
-The goal is to derive useful indicators from raw measurements
-so that system behavior can be interpreted more clearly.
+The instructor's example focuses on system reliability using request volumes, errors, and response times.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+For my custom application, I plan to develop a **Metadata Completeness & Governance Readiness Monitor** using a fictional healthcare organization's metadata inventory. The project will focus on measuring metadata completeness, data ownership coverage, and documentation gaps to help identify opportunities for improving data governance practices.
+
+The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
-The example uses system metrics from `data/`.
+### Instructor Example
+
+The example uses system metrics from the `data/` directory.
 
 Each observation includes:
 
@@ -35,28 +39,48 @@ Each observation includes:
 - `errors` - number of failed requests.
 - `total_latency_ms` - total response time in milliseconds.
 
+### Planned Custom Dataset
+
+The custom application will use synthetic metadata records representing data assets across departments in a fictional healthcare organization.
+
+Potential fields include:
+
+- Dataset name and department.
+- Assigned data owner and data steward.
+- Dataset description.
+- Data classification.
+- Business definition or documentation status.
+
+Using synthetic data allows the project to demonstrate realistic governance challenges without exposing organizational or sensitive information.
+
 ## Approach
 
-The pipeline uses Polars to calculate derived signals:
+The instructor's example uses Polars to calculate derived signals:
 
 - **Error rate** - errors relative to requests.
 - **Average latency** - average response time per request.
 - **Throughput** - request volume represented in the example.
 
+The planned custom application will adapt these signal design techniques to calculate:
+
+- **Metadata completeness rate** - percentage of required metadata fields completed.
+- **Ownership coverage** - percentage of datasets with an assigned owner.
+- **Documentation gaps** - missing descriptions, definitions, or other required information.
+- **Governance readiness indicators** - calculated measures that help identify assets requiring attention.
+
 Explore these project components:
 
 - [pyproject.toml](pyproject.toml) - project configuration and dependencies.
-- [src/cintel/signal_design.py](src/cintel/signal_design.py) - signal calculations.
-- [data/](data/) - input measurements.
-- [artifacts/](artifacts/) - generated signals.
+- [src/cintel/signal_design.py](src/cintel/signal_design.py) - main signal design pipeline.
+- [data/](data/) - input measurements and datasets.
+- [artifacts/](artifacts/) - generated signals and results.
 - [tests/](tests/) - automated tests.
 - [.github/workflows/](.github/workflows/) - automated checks and documentation deployment.
 - [docs/](docs/) - project documentation.
 
 ## Run the Project
 
-Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-to set up your machine and project environment.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) to set up your machine and project environment.
 
 From a VS Code terminal in the project root:
 
@@ -66,32 +90,33 @@ uv run python -m cintel.signal_design
 
 ## Run the Reactive App
 
-From a VS Code terminal in the project root
-(hit CTRL + c to quit):
+From a VS Code terminal in the project root (press CTRL + C to quit):
 
 ```shell
-uv run marimo run  src/cintel/app.py
+uv run marimo run src/cintel/app.py
 ```
 
 ## Results
 
-The pipeline adds calculated signals to the input measurements
-and writes `artifacts/signals.csv`.
-Review the generated signals and consider what they reveal
-that the raw measurements alone do not.
+The instructor's example pipeline adds calculated signals to the original system measurements and writes the results to:
 
-Successful execution produces a terminal message:
+`artifacts/signals.csv`
 
-```shell
+The resulting dataset includes the original measurements alongside the derived monitoring signals.
+
+The planned custom application will produce metadata governance metrics that help identify documentation gaps and areas requiring stewardship attention.
+
+Successful execution of the example pipeline produces:
+
+```text
 ========================
 Pipeline executed successfully!
 ========================
 ```
 
-A `project.log` file is created in the project root.
+A `project.log` file is created in the project root to support debugging and transparency.
 
-This confirms that the Python pipeline executes
-and the logging system works.
+Custom project results and visualizations will be documented as the application is developed and verified.
 
 ## Verification
 
@@ -101,34 +126,37 @@ Run the automated tests:
 uv run pytest
 ```
 
+Additional validation will be documented as the custom signals and calculations are implemented.
+
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/cintel-03-signal-design/)
-is published using Zensical and GitHub Pages.
+The [hosted documentation site](https://ssowers2.github.io/cintel-03-signal-design-sowers/) is published using Zensical and GitHub Pages.
 
-The documentation site is used to present the project report,
-covering such sections as data, methods, results, visualizations,
-interpretation, and conclusions.
+The documentation site presents the project report, including:
+
+- Data and operational questions.
+- Signal calculations and methods.
+- Technical modifications.
+- Results and visualizations.
+- Interpretation and limitations.
+- Conclusions.
 
 ## CI/CD and GitHub Actions
 
-This project includes continuous integration and continuous deployment (CI/CD)
-to check project files and publish the docs.
+This project includes continuous integration and continuous deployment (CI/CD) workflows to check project files and publish documentation.
+
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/ssowers2/cintel-03-signal-design-sowers/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/ssowers2/cintel-03-signal-design-sowers/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
-Follow the
-[Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
-for **detailed instructions and troubleshooting**.
+Follow the [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/) for detailed instructions and troubleshooting.
 
 ### Initialize and Update the Python Environment
 
-With the project open in VS Code, open a VS Code terminal.
-Paste each command and hit Enter or Return after to run it.
+With the project open in VS Code, open a terminal and run:
 
 ```shell
 uvx pup-clean --delete
@@ -142,12 +170,7 @@ uv audit
 
 ### Set Up and Run Git Hooks
 
-Set up and run the git hooks to perform
-basic checks automatically before
-any changes get pushed to GitHub.
-
-In the VS Code terminal,
-paste each command and hit Enter or Return after to run it.
+Set up and run the Git hooks to perform basic checks automatically before changes are pushed to GitHub.
 
 ```shell
 uvx prek install --force
@@ -155,14 +178,13 @@ uvx prek update --freeze --cooldown-days 7
 
 git add -A
 uvx prek run --all-files
-# repeat if changes were made
+# Repeat if changes were made
 uvx prek run --all-files
 ```
 
 ### Run Common Chores
 
-Run linters, formatters, type checks, tests, and
-build the documentation.
+Run linters, formatters, type checks, tests, and build the documentation.
 
 ```shell
 uv run ruff check . --fix
@@ -173,7 +195,7 @@ uv run python -m pytest
 uv run python -m zensical build
 ```
 
-### Git add-commit-push to GitHub
+### Git Add-Commit-Push to GitHub
 
 After making useful changes, save your work to GitHub.
 
@@ -185,13 +207,12 @@ git push -u origin main
 
 ## Developer Notes
 
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through previous commands.
+- Use `CTRL+F` to find and replace text within a file.
 
 ## Developer Tools
 
-This project uses professional Python tools to support development,
-testing, documentation, and code quality.
+This project uses professional Python tools to support development, testing, documentation, and code quality.
 
 - [uv](https://docs.astral.sh/uv/) - Python environments and dependencies.
 - [Ruff](https://docs.astral.sh/ruff/) - Python linting and formatting, configured in [.ruff.toml](.ruff.toml).
@@ -202,7 +223,8 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/cintel-03-signal-design/)
+- [GitHub Repository](https://github.com/ssowers2/cintel-03-signal-design-sowers)
+- [Hosted Documentation](https://ssowers2.github.io/cintel-03-signal-design-sowers/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
