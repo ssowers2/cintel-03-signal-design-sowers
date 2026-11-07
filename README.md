@@ -228,3 +228,28 @@ This project uses professional Python tools to support development, testing, doc
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+
+### Small Technical Modification — Success Rate Signal
+
+For this experiment, I added a new `success_rate` signal to the
+original system metrics pipeline using Python and Polars.
+
+**Purpose:** Measure the proportion of requests completed
+successfully, providing another way to evaluate system reliability.
+
+**Calculation:**
+
+success_rate = (requests - errors) / requests
+
+The calculation handles zero requests to avoid division-by-zero errors.
+
+**Prediction:** I expected the new signal to show higher success
+rates when fewer requests failed.
+
+**Results:** The updated pipeline successfully generated the
+`success_rate` column in `artifacts/signals.csv`. Across the 10
+records, success rates ranged from 97.5% to 100%.
+
+**What I learned:** Adding a derived signal can provide another
+perspective on existing data without changing the original
+measurements.
