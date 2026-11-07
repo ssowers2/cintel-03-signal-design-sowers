@@ -78,6 +78,29 @@ throughput = requests
 
 The pipeline handles zero-request observations without dividing by zero.
 
+
+### Part D2: Small Technical Modification — Success Rate
+
+For my small technical experiment, I added a fourth signal,
+`success_rate`, to the instructor's original system metrics pipeline.
+
+The purpose was to measure the proportion of successful requests
+and provide another perspective on system reliability.
+
+#### Success Rate Calculation
+
+`success_rate = (requests - errors) / requests`
+
+I modified the `design_signals()` function in
+`src/cintel/utils_system.py` using Polars and updated the logging
+message in `src/cintel/signal_design.py`.
+
+The calculation handles zero-request observations to avoid
+division-by-zero errors.
+
+I predicted that records with fewer errors relative to total
+requests would have higher success rates.
+
 ### Planned Custom Governance Signals
 
 The custom application will adapt these techniques to calculate governance-related metrics.
@@ -122,7 +145,30 @@ The example demonstrates the following observed ranges:
 
 The output contains the original system measurements alongside the calculated signals.
 
-[View Example Signal Results](https://github.com/ssowers2/cintel-03-signal-design-sowers/blob/main/artifacts/signals.csv)
+[View Signal Results Including D2 Modification](https://github.com/ssowers2/cintel-03-signal-design-sowers/blob/main/artifacts/signals.csv)
+
+### Part D2: Success Rate Experiment Results
+
+The updated pipeline successfully processed all 10 system metric
+records and generated a new `success_rate` column in
+`artifacts/signals.csv`.
+
+The table below shows selected observations from the experiment.
+
+| Requests | Errors | Error Rate | Success Rate |
+|---------:|-------:|-----------:|-------------:|
+| 120 | 3 | 2.50% | 97.50% |
+| 150 | 2 | 1.33% | 98.67% |
+| 200 | 5 | 2.50% | 97.50% |
+| 60 | 0 | 0.00% | 100.00% |
+
+Across all 10 observations, success rates ranged from
+97.5% to 100%.
+
+The results matched my prediction. Records with lower error
+rates had higher success rates.
+
+[View Updated Signal Results](https://github.com/ssowers2/cintel-03-signal-design-sowers/blob/main/artifacts/signals.csv)
 
 ### Custom Project Results
 
@@ -148,6 +194,24 @@ Request counts provide additional context about system activity.
 
 Together, these signals provide a more informative view of system behavior than the raw measurements alone.
 
+### Part D2: Experiment Interpretation
+
+This experiment demonstrated how a new signal can be calculated
+from existing measurements without modifying the original data.
+
+While error rate measures failed requests, success rate measures
+the proportion of requests completed successfully.
+
+I learned how to extend an existing Polars transformation,
+update the pipeline output, and verify the calculated results.
+
+The success-rate signal provides an additional perspective on
+system reliability, although it is mathematically related to
+the existing error-rate signal.
+
+The experiment also reinforced the importance of validating
+changes before committing them to GitHub.
+
 ### Planned Governance Application
 
 Metadata completeness and ownership coverage can help identify where data assets may lack sufficient documentation or accountability.
@@ -163,6 +227,10 @@ Request counts are not normalized by elapsed time, so they represent throughput 
 For the custom project, the metadata inventory will be synthetic and will not represent actual organizational performance.
 
 Metadata completeness alone does not guarantee that documentation is accurate, useful, or current. The results will need to be interpreted within the context of defined metadata requirements.
+
+The D2 success-rate signal is derived from the same measurements
+as error rate, so it provides an alternative perspective rather
+than an independent measure of system performance.
 
 ## Conclusion
 
