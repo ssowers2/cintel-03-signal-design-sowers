@@ -1,0 +1,61 @@
+asset_id,dataset_name,department,data_owner,data_steward,description,business_definition,data_classification
+A001,Patient Encounters,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A002,Emergency Visits,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A003,Outpatient Appointments,Clinical Analytics,Assigned,Missing,Complete,Missing,Confidential
+A004,Clinical Orders,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A005,Inpatient Admissions,Clinical Analytics,Assigned,Assigned,Complete,Missing,Confidential
+A006,Patient Transfers,Clinical Analytics,Assigned,Missing,Missing,Missing,Missing
+A007,Clinical Procedures,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A008,Medication Administration,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A009,Discharge Records,Clinical Analytics,Missing,Assigned,Complete,Missing,Confidential
+A010,Provider Encounters,Clinical Analytics,Assigned,Assigned,Complete,Complete,Confidential
+A011,Clinical Documentation,Clinical Analytics,Assigned,Missing,Missing,Missing,Confidential
+A012,Referral Tracking,Clinical Analytics,Assigned,Assigned,Complete,Complete,Missing
+A013,Billing Transactions,Revenue Cycle,Assigned,Assigned,Complete,Complete,Confidential
+A014,Claims Processing,Revenue Cycle,Assigned,Assigned,Complete,Complete,Confidential
+A015,Insurance Verification,Revenue Cycle,Assigned,Missing,Complete,Complete,Confidential
+A016,Payment Posting,Revenue Cycle,Assigned,Assigned,Complete,Complete,Confidential
+A017,Denial Management,Revenue Cycle,Assigned,Assigned,Complete,Missing,Confidential
+A018,Charge Capture,Revenue Cycle,Assigned,Missing,Missing,Missing,Confidential
+A019,Accounts Receivable,Revenue Cycle,Assigned,Assigned,Complete,Complete,Confidential
+A020,Revenue Forecasting,Revenue Cycle,Assigned,Assigned,Complete,Complete,Internal
+A021,Patient Estimates,Revenue Cycle,Missing,Missing,Complete,Missing,Confidential
+A022,Contract Management,Revenue Cycle,Assigned,Assigned,Complete,Complete,Internal
+A023,Collections Reporting,Revenue Cycle,Assigned,Missing,Missing,Missing,Confidential
+A024,Financial Adjustments,Revenue Cycle,Assigned,Assigned,Complete,Complete,Internal
+A025,Stroke Quality Measures,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A026,Patient Safety Events,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A027,Readmission Measures,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A028,Infection Surveillance,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A029,Quality Scorecards,Quality Improvement,Assigned,Assigned,Complete,Complete,Internal
+A030,Clinical Outcomes,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A031,Performance Improvement,Quality Improvement,Assigned,Assigned,Complete,Complete,Internal
+A032,Regulatory Measures,Quality Improvement,Assigned,Assigned,Complete,Complete,Confidential
+A033,Patient Experience,Quality Improvement,Assigned,Missing,Complete,Complete,Confidential
+A034,Quality Audits,Quality Improvement,Assigned,Assigned,Complete,Missing,Internal
+A035,Compliance Tracking,Quality Improvement,Assigned,Assigned,Complete,Complete,Internal
+A036,Improvement Projects,Quality Improvement,Assigned,Assigned,Complete,Complete,Internal
+A037,Medical Record Index,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A038,Release of Information,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A039,Document Imaging,Health Information Management,Assigned,Missing,Complete,Missing,Confidential
+A040,Record Completion,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A041,Coding Audits,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A042,Diagnosis Coding,Health Information Management,Assigned,Missing,Complete,Missing,Confidential
+A043,Procedure Coding,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A044,Record Retention,Health Information Management,Assigned,Assigned,Complete,Complete,Internal
+A045,Documentation Deficiencies,Health Information Management,Missing,Missing,Missing,Missing,Confidential
+A046,Chart Corrections,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A047,Abstracting Records,Health Information Management,Assigned,Missing,Complete,Missing,Confidential
+A048,Privacy Requests,Health Information Management,Assigned,Assigned,Complete,Complete,Confidential
+A049,Employee Directory,Human Resources,Assigned,Assigned,Complete,Complete,Internal
+A050,Training Records,Human Resources,Assigned,Assigned,Complete,Complete,Internal
+A051,Recruitment Tracking,Human Resources,Assigned,Missing,Complete,Missing,Internal
+A052,Employee Benefits,Human Resources,Assigned,Assigned,Complete,Complete,Confidential
+A053,Performance Reviews,Human Resources,Assigned,Missing,Missing,Missing,Confidential
+A054,Workforce Planning,Human Resources,Assigned,Assigned,Complete,Complete,Internal
+A055,Staff Scheduling,Human Resources,Assigned,Missing,Complete,Missing,Internal
+A056,Employee Onboarding,Human Resources,Assigned,Assigned,Complete,Complete,Internal
+A057,Position Management,Human Resources,Missing,Missing,Missing,Missing,Internal
+A058,Employee Relations,Human Resources,Assigned,Missing,Complete,Missing,Confidential
+A059,Learning Management,Human Resources,Assigned,Assigned,Complete,Complete,Internal
+A060,Exit Interviews,Human Resources,Missing,Missing,Missing,Missing,Confidential
