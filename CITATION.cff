@@ -16,10 +16,13 @@ title: cintel-03-signal-design
 date-released: "2026-03-06"
 
 authors:
-  - family-names: Case, Sowers
-    given-names: Denise M., Sabriya F.
+  - family-names: Case
+    given-names: Denise M.
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, USA"
+
+  - family-names: Sowers
+    given-names: Sabriya
 
 repository-code: "https://github.com/ssowers2/cintel-03-signal-design-sowers"
 url: "https://github.com/ssowers2/cintel-03-signal-design-sowers"
